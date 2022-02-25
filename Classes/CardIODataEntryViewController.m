@@ -118,6 +118,7 @@
   }
 
   [self calculateRelevantViewFrame];
+  
 
   CardIOPaymentViewController *pvc = (CardIOPaymentViewController *)self.navigationController;
   self.title = CardIOLocalizedString(@"entry_title", self.context.languageOrLocale); // Enter card info
@@ -150,6 +151,10 @@
                                                                 action:@selector(done)];
   self.navigationItem.rightBarButtonItem = doneButton;
   self.navigationItem.rightBarButtonItem.enabled = NO;
+  
+  // MARK:  Addition for navBar background
+  self.navigationController.navigationBar.translucent = NO;
+  self.navigationController.navigationBar.barTintColor = UIColor.grayColor;
 
   self.collectExpiry = pvc.collectExpiry;
   self.collectCVV = pvc.collectCVV;
